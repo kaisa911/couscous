@@ -1,0 +1,24 @@
+.layout-wrap {
+  display: flex;
+  height: 100%;
+  width: 100vw;
+  height: 100vh;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 64px;
+    background: #f4f4f4;
+    &.open {
+      width: 120px;
+    }
+    .logo {
+      width: 100%;
+      height: 64px;
+    }
+  }
+  .right {
+    flex: 1;
+  }
+}
