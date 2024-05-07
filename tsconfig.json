@@ -10,11 +10,17 @@
       // 别名 '@' 将指向 'src/*'
       "@/*": ["src/*"]
     },
+    "declaration": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["./render/**/*", "postcss.config.js"]
+  "include": [
+    "./render/**/*",
+    "postcss.config.js",
+    "./render/src/**/**/*.d.ts"
+  ],
+  "files": ["./render/src/pages/TodoList/index.d.ts"]
 }

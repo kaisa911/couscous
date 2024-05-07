@@ -1,30 +1,23 @@
-import React from 'react';
+import React, { Suspense, lazy, FC } from 'react';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 import Home from '../pages/Home/index';
 import Layout from '../pages/Layout/index';
 import TodoList from '../pages/TodoList/index';
-const Panel = React.lazy(() => import('../pages/Panel/index'));
+const Panel = lazy(() => import('../pages/Panel/index'));
 
-const App = (): React.JSX.Element => (
+const App: FC = () => (
   <BrowserRouter>
     <Routes>
-      <Route
-        path='/'
-        element={
-          <Layout>
-            <Outlet />
-          </Layout>
-        }
-      >
+      <Route path='/' element={<Layout></Layout>}>
         <Route index element={<Home />} />
-        <Route path='todos' element={<TodoList />} />
+        <Route path='/todos' element={<TodoList />} />
         <Route
-          path='panel'
+          path='/panel'
           element={
-            <React.Suspense fallback={<>...</>}>
+            <Suspense fallback={<></>}>
               <Panel />
-            </React.Suspense>
+            </Suspense>
           }
         />
       </Route>

@@ -14,9 +14,7 @@ module.exports = merge(common, {
       directory: path.join(__dirname, 'build'),
       serveIndex: true,
     },
-    historyApiFallback: {
-      index: './index.html',
-    },
+    historyApiFallback: true,
     compress: false,
     port: 8080,
   },
